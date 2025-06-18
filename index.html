@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание Green-API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        input[type="text"],
+        textarea {
+            width: calc(100% - 20px);
+            /* Учитываем padding */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* Чтобы padding не увеличивал ширину */
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Тестовое задание Green-API</h1>
+
+        <div class="section">
+            <h2>Параметры подключения</h2>
+            <label for="idInstance">idInstance:</label>
+            <input type="text" id="idInstance" placeholder="Введите idInstance">
+
+            <label for="apiTokenInstance">apiTokenInstance:</label>
+            <input type="text" id="apiTokenInstance" placeholder="Введите apiTokenInstance">
+        </div>
+
+        <div class="section">
+            <h2>Методы API</h2>
+            <button id="getSettingsBtn">getSettings</button>
+            <button id="getStateInstanceBtn">getStateInstance</button>
+        </div>
+
+        <div class="section">
+            <h2>Отправка сообщения</h2>
+            <label for="chatIdSendMessage">Номер телефона получателя (77771234567):</label>
+            <input type="text" id="chatIdSendMessage" placeholder="Например, 77771234567">
+
+            <label for="messageText">Текст сообщения:</label>
+            <input type="text" id="messageText" placeholder="Например, Hello World!">
+            <button id="sendMessageBtn">sendMessage</button>
+        </div>
+
+        <div class="section">
+            <h2>Отправка файла по URL</h2>
+            <label for="chatIdSendFile">Номер телефона получателя (77771234567):</label>
+            <input type="text" id="chatIdSendFile" placeholder="Например, 77771234567">
+
+            <label for="fileUrl">URL файла:</label>
+            <input type="text" id="fileUrl" placeholder="Например, https://my.site.com/img/horse.png">
+            <button id="sendFileByUrlBtn">sendFileByUrl</button>
+        </div>
+
+        <div class="section">
+            <h2>Ответ API:</h2>
+            <textarea id="apiResponse" rows="10" readonly
+                placeholder="Здесь будет отображаться ответ от API"></textarea>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
